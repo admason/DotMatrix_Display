@@ -1,0 +1,94 @@
+num = int(input('Enter number: '))
+elem = input('Enter symbol type ')
+cols=7
+#elem = '#'
+d=int(5)
+for k in range(cols):
+    row = [cols*[' '] for line in range(cols)] 
+
+####################################################    
+if num ==1:
+    for i in range(cols):
+            row[i][cols-1]=elem
+#####################################################
+if num ==2:   #
+    for i in range(cols):
+            row[1][cols-1] = row[2][cols-1]\
+            = row[4][0]    = row[5][0] = elem
+    for j in range(cols):
+            row[0][j] = row[3][j]\
+                      = row[6][j] = elem  
+#######################################################           
+if num ==3:
+    for i in range(cols):
+            row[i][cols-1] = elem 
+    for j in range(cols):
+            row[0][j] = row[3][j] = row[6][j] = elem             
+######################################################
+if num == 4:   #
+    for i in range(cols):
+            row[0][0]        =row[0][cols-1]\
+            = row[1][0]      =row[1][cols-1]\
+            = row[2][0]      =row[2][cols-1]\
+            = row[3][cols-1] =row[4][cols-1]\
+            = row[5][cols-1] =elem 
+    for j in range(cols):
+            row[2][j]        =elem   
+#######################################################
+if num == 5:   #
+    for i in range(cols):
+            row[0][0]       = row[0][cols-1]\
+            =row[1][0]\
+            =row[2][0]\
+            =row[3][cols-1] =row[4][cols-1]\
+            =row[5][cols-1] =elem 
+    for j in range(cols):
+            row[0][j] = row[3][j] = row[6][j] = elem   
+#######################################################
+if num == 6:   #
+    for i in range(cols):
+            row[0][0] = row[0][cols-1]\
+            = row[1][0]\
+            = row[2][0]\
+            = row[3][cols-1]\
+            = row[4][0] = row[4][cols-1]\
+            = row[5][0] = row[5][cols-1] = elem 
+    for j in range(cols):
+            row[0][j]   = row[3][j] = row[6][j] = elem   
+#######################################################
+if num == 7:
+    for i in range(cols):
+            row[i][cols-1] = elem 
+    for j in range(cols):
+            row[0][j] = elem
+###################################################### 
+if num == 8:   #
+    for i in range(cols):
+            row[0][0]  =row[0][cols-1]\
+            =row[1][0] =row[1][cols-1]\
+            =row[2][0] =row[2][cols-1]\
+            =row[3][cols-1]\
+            =row[4][0] = row[4][cols-1]\
+            =row[5][0] = row[5][cols-1] = elem 
+    for j in range(cols):
+            row[0][j]  =row[3][j] = row[6][j] = elem   
+###################################################### 
+if num == 9:   #
+    for i in range(cols):
+            row[0][0]  = row[0][cols-1]\
+            = row[1][0] = row[1][cols-1]\
+            = row[2][0] = row[2][cols-1]\
+            = row[3][cols-1]\
+            = row[4][cols-1]\
+            = row[5][cols-1] = elem 
+    for j in range(cols):
+            row[0][j] = row[3][j] = row[6][j] = elem   
+#######################################################
+lines = ["" for lin in range(cols)]
+print(f"\n")
+
+for lin in range(cols):
+    lines[lin] += "".join(row[lin])+''
+
+for lin in lines:
+    print(lin)
